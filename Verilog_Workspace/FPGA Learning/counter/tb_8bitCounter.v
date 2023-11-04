@@ -1,7 +1,8 @@
+`timescale 1ns / 1ns  // 单位/精度
 module tb_8bitCounter();
 
   reg clk;        // 时钟信号
-  reg reset;      // 复位信号
+  reg rst_n;      // 复位信号
   wire [7:0] count; // 计数器输出
 
   // 时钟生成器
@@ -11,28 +12,33 @@ module tb_8bitCounter();
 
   // 初始化输入信号
   initial begin
-    $monitor("%t CLK = %b, Reset = %b, Count = %h", $time, clk, reset, count);
+    $monitor("%t CLK = %b, rst_n = %b, Count = %h", $time, clk, rst_n, count);
     clk <= 0;
-    reset <= 0;
+    rst_n <= 0;
 
     // 等待时钟稳定
-    #10 reset <= 1;
+    #10 rst_n <= 1;
 
     // 模拟计数过程
-    #20 reset <= 0;
+    #20 rst_n <= 0;
     #10;
-    #20 reset <= 1;
-    #10 reset <= 0;
+    #25 rst_n <= 1;
+    #10 rst_n <= 0;
     #10;
     
     // 结束仿真
     $finish;
   end
 
+   initial begin
+    $dumpfile("t_counter.vcd");
+    $dumpvars(0, tb_8bitCounter);
+  end
+
   // 实例化被测试的计数器模块
-  tb_8bitCounter dut (
+  counter dut (
     .clk(clk),
-    .reset(reset),
+    .rst_n(rst_n),
     .count(count)
   );
 
