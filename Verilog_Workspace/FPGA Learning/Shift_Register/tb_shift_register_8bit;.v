@@ -40,6 +40,13 @@ module tb_shift_register_8bit();
   end
 
 
+initial
+begin            
+    $dumpfile("tb_shift_reg.vcd");        //生成的vcd文件名称
+    $dumpvars(0, tb_shift_register_8bit);          //tb模块名称
+end
+
+
 // 实例化被测试的移位寄存器模块
 shift_register_8bit t_shift_reg(
     .clk(clk),
