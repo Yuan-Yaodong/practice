@@ -1,7 +1,7 @@
 // Test Pattern 1-1
 `timescale 1ns/10ps
 module t_selector;
-  wire Y；
+  wire Y;
   reg A, B, SEL;
 
   initial 

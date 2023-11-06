@@ -1,0 +1,38 @@
+$date
+	Sun Nov 05 09:43:27 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module tb_led $end
+$var wire 1 ! led $end
+$var reg 1 " key $end
+$scope module u_led $end
+$var wire 1 " key $end
+$var wire 1 ! led $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1"
+0!
+$end
+#200
+1!
+0"
+#700
+0!
+1"
+#1700
+1!
+0"
+#2700
+0!
+1"
