@@ -1,14 +1,14 @@
 module counter (
-    input clk,  // æ—¶é’Ÿè¾“å…¥
-    input rst_n, // å¤ä½è¾“å…¥
-    output reg [7:0] count // 8ä½è®¡æ•°è¾“å‡º
+    input clk,  // Ê±ÖÓÊäÈë
+    input rst_n, // ¸´Î»ÊäÈë
+    output reg [7:0] count // 8Î»¼ÆÊıÊä³ö
 );
 
 always @(posedge clk or negedge rst_n) begin
-    if (!rst_n) // å¤ä½ä¿¡å·ä¸ºä½ç”µå¹³æ—¶ï¼Œå°†è®¡æ•°å™¨æ¸…é›¶
+    if (!rst_n) // ¸´Î»ĞÅºÅÎªµÍµçÆ½Ê±£¬½«¼ÆÊıÆ÷ÇåÁã
         count <= 8'b0;
     else
-        count <= count + 1; // æ¯ä¸ªä¸Šå‡æ²¿è®¡æ•°åŠ 1
+        count <= count + 1; // Ã¿¸öÉÏÉıÑØ¼ÆÊı¼Ó1
 end
 
 endmodule

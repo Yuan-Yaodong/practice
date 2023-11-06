@@ -1,32 +1,32 @@
-`timescale 1ns / 1ns  // å•ä½/ç²¾åº¦
+`timescale 1ns / 1ns  // µ¥Î»/¾«¶È
 module tb_8bitCounter();
 
-  reg clk;        // æ—¶é’Ÿä¿¡å·
-  reg rst_n;      // å¤ä½ä¿¡å·
-  wire [7:0] count; // è®¡æ•°å™¨è¾“å‡º
+  reg clk;        // Ê±ÖÓĞÅºÅ
+  reg rst_n;      // ¸´Î»ĞÅºÅ
+  wire [7:0] count; // ¼ÆÊıÆ÷Êä³ö
 
-  // æ—¶é’Ÿç”Ÿæˆå™¨
+  // Ê±ÖÓÉú³ÉÆ÷
   always begin
     #5 clk <= ~clk;
   end
 
-  // åˆå§‹åŒ–è¾“å…¥ä¿¡å·
+  // ³õÊ¼»¯ÊäÈëĞÅºÅ
   initial begin
     $monitor("%t CLK = %b, rst_n = %b, Count = %h", $time, clk, rst_n, count);
     clk <= 0;
     rst_n <= 0;
 
-    // ç­‰å¾…æ—¶é’Ÿç¨³å®š
+    // µÈ´ıÊ±ÖÓÎÈ¶¨
     #10 rst_n <= 1;
 
-    // æ¨¡æ‹Ÿè®¡æ•°è¿‡ç¨‹
+    // Ä£Äâ¼ÆÊı¹ı³Ì
     #20 rst_n <= 0;
     #10;
     #25 rst_n <= 1;
     #10 rst_n <= 0;
     #10;
     
-    // ç»“æŸä»¿çœŸ
+    // ½áÊø·ÂÕæ
     $finish;
   end
 
@@ -35,7 +35,7 @@ module tb_8bitCounter();
     $dumpvars(0, tb_8bitCounter);
   end
 
-  // å®ä¾‹åŒ–è¢«æµ‹è¯•çš„è®¡æ•°å™¨æ¨¡å—
+  // ÊµÀı»¯±»²âÊÔµÄ¼ÆÊıÆ÷Ä£¿é
   counter dut (
     .clk(clk),
     .rst_n(rst_n),

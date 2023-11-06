@@ -1,24 +1,24 @@
 module shift_register_8bit(
-    input  clk,           // æ—¶é’Ÿè¾“å…¥
-    input  reset,         // å¤ä½è¾“å…¥
-    input  shift_left,    // å·¦ç§»è¾“å…¥
-    input  shift_right,   // å³ç§»è¾“å…¥
-    input  data_in,       // æ•°æ®è¾“å…¥
-    output reg [7:0] data // 8ä½ç§»ä½å¯„å­˜å™¨è¾“å‡º
+    input  clk,           // Ê±ÖÓÊäÈë
+    input  reset,         // ¸´Î»ÊäÈë
+    input  shift_left,    // ×óÒÆÊäÈë
+    input  shift_right,   // ÓÒÒÆÊäÈë
+    input  data_in,       // Êı¾İÊäÈë
+    output reg [7:0] data // 8Î»ÒÆÎ»¼Ä´æÆ÷Êä³ö
 );
 
 
 always @(posedge clk or negedge reset) begin
     if (!reset) 
-        data <= 8'b0; // å¤ä½æ—¶ï¼Œå°†å¯„å­˜å™¨æ¸…é›¶
+        data <= 8'b0; // ¸´Î»Ê±£¬½«¼Ä´æÆ÷ÇåÁã
      else  if (shift_left) 
-            // å·¦ç§»æ“ä½œ
+            // ×óÒÆ²Ù×÷
             data <= {data[6:0], data_in};
      else if (shift_right) 
-            // å³ç§»æ“ä½œ
+            // ÓÒÒÆ²Ù×÷
             data <= {data_in, data[7:1]};
         else
-            // æ— ç§»ä½æ“ä½œï¼Œä»…æ›´æ–°æ•°æ®
+            // ÎŞÒÆÎ»²Ù×÷£¬½ö¸üĞÂÊı¾İ
             data <= data_in;
         end
 

@@ -1,4 +1,4 @@
-`timescale  1ns/1ns   // Âçï‰Ωç/Á≤æÂ∫¶
+`timescale  1ns/1ns   // µ•Œª/æ´∂»
 
 module testbench_led();
 
@@ -8,9 +8,9 @@ module testbench_led();
   initial begin
      $monitor("%t key=%b led=%b",$time, key, led);
     key <= 1'b1;
-    # 20           // Âª∂ËøüËØ≠Âè•
+    # 20           // —”≥Ÿ”Ôæ‰
     key <= 1'b0;
-    # 500           // Âª∂ËøüËØ≠Âè•
+    # 500           // —”≥Ÿ”Ôæ‰
     key <= 1'b1;
     # 1000
     key <= 1'b0;

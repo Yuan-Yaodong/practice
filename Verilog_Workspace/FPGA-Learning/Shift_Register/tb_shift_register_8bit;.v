@@ -1,4 +1,4 @@
-`timescale 1ns / 1ns  // å•ä½/ç²¾åº¦
+`timescale 1ns / 1ns  // µ¥Î»/¾«¶È
 module tb_shift_register_8bit ();
 
   reg clk;
@@ -9,12 +9,12 @@ module tb_shift_register_8bit ();
   wire [7:0] data;
 
 
-  // æ—¶é’Ÿç”Ÿæˆå™¨
+  // Ê±ÖÓÉú³ÉÆ÷
   always begin
     #5 clk <= ~clk;
   end
 
-  // åˆå§‹åŒ–è¾“å…¥ä¿¡å·
+  // ³õÊ¼»¯ÊäÈëĞÅºÅ
   initial begin
     $monitor("%t CLK = %b,Reset = %b,shift_left = %b,shift_right = %b,data_in = %b,Data: %b",
              $time, clk, reset, shift_left, shift_right, data_in, data);
@@ -25,17 +25,17 @@ module tb_shift_register_8bit ();
     shift_right <= 0;
     data_in <= 0;
 
-    // ç­‰å¾…æ—¶é’Ÿç¨³å®š
+    // µÈ´ıÊ±ÖÓÎÈ¶¨
     #10 reset <= 1;
 
-    // è¾“å…¥æ•°æ®å¹¶è¿›è¡Œç§»ä½æ“ä½œ
+    // ÊäÈëÊı¾İ²¢½øĞĞÒÆÎ»²Ù×÷
     #10 data_in <= 1;
     shift_left <= 1;
     #30 #10 data_in <= 0;
     #20 reset <= 0;
     #20
 
-      // ç»“æŸä»¿çœŸ
+      // ½áÊø·ÂÕæ
       $finish;
   end
 
@@ -44,7 +44,7 @@ module tb_shift_register_8bit ();
     $dumpvars(0, tb_shift_register_8bit);
   end
   
-  // å®ä¾‹åŒ–è¢«æµ‹è¯•çš„ç§»ä½å¯„å­˜å™¨æ¨¡å—
+  // ÊµÀı»¯±»²âÊÔµÄÒÆÎ»¼Ä´æÆ÷Ä£¿é
 
   shift_register_8bit t_shift_reg (
       .clk(clk),
