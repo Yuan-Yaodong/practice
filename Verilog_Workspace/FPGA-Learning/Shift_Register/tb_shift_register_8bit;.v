@@ -43,7 +43,9 @@ module tb_shift_register_8bit ();
     $dumpfile("tb_sreg.vcd");
     $dumpvars(0, tb_shift_register_8bit);
   end
+  
   // 实例化被测试的移位寄存器模块
+
   shift_register_8bit t_shift_reg (
       .clk(clk),
       .reset(reset),
