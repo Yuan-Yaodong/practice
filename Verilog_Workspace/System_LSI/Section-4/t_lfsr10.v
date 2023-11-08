@@ -16,7 +16,8 @@ module t_lfsr10;
       reset <= 1;
       #10 reset <= 0;
       #10 reset <= 1;
-      #300
+      #450 reset <= 0;
+      #50
       $finish;
     end
 
