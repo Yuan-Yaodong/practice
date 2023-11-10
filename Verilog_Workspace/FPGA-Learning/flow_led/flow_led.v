@@ -11,8 +11,8 @@ module flow_led(input sys_clk,         // system clock
     always @(posedge sys_clk or negedge sys_rst_n) begin
         if (!sys_rst_n)
             cnt <= 25'd0;
-        else if (cnt < (25'd25000000 - 25'd1)) // if cnt < 24999999, set cnt = 0
-        //  else if (cnt < (25'd25 - 25'd1)) // if cnt < 24999999, set cnt = 0
+        else if (cnt < (25'd25000000 - 25'd1)) // if cnt > 24999999, set cnt = 0
+        //  else if (cnt < (25'd25 - 25'd1)) // if cnt > 24999999, set cnt = 0
             cnt <= cnt + 25'd1;
         else
             cnt <= 25'd0;
