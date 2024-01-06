@@ -1,0 +1,5 @@
+{
+    "digital-ide.welcome.show": false,
+    "digital-ide.function.lsp.linter.vlog.diagnostor": "vivado",
+    "digital-ide.dont-show-again.propose.issue": true
+}
