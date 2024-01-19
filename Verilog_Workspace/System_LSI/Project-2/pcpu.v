@@ -296,12 +296,12 @@ module pcpu (reset, clock, enable, start, i_addr, i_datain, d_addr,
             ALUo = reg_A >> reg_B;
         `SLA    :
             ALUo = reg_A <<< reg_B;
-        `SRA    :
+        `SRA    : 
             ALUo = reg_A >>> reg_B;
 
         /* Control operations
-        /* reg_A = r1;  
-        /* reg_B = {val2+val3} */
+           reg_A = r1;  
+           reg_B = {val2+val3} */
         `JUMP   :
             ALUo = reg_B;          // jump to {val2+val3}
         `JMPR    :
