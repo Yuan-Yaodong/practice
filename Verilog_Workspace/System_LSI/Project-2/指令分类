@@ -1,0 +1,39 @@
+<---空指令--->
+*NOP    
+*HALT
+
+<---RI型指令--->:  r1, r2, val3
+*LOAD    r1  r2  val3
+*STORE
+SLL
+SRL
+SLA
+SRA   
+
+
+<---R型指令--->:  r1, r2, r3
+*ADD     r1  r2  r3
+ADDC
+SUB
+SUBC
+-------- 逻辑运算
+AND 按位与 &
+OR  
+XOR
+-------- 比较
+*CMP         r2  r3
+
+<---I型指令--->:  r1, val2, val3
+ADDI    r1  val2  val3
+LDIH
+SUBI
+
+<----跳转型I型指令---->
+JUMP
+JMPR
+*BZ
+BNZ
+*BN
+BNN
+BC
+BNC
